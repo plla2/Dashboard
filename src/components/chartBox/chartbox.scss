@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+
+.chartBox {
+  display: flex;
+  gap: 40px;
+
+  .leftInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .title {
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+    .amount {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .viewAll {
+      color: $soft-color;
+      opacity: 0.5;
+      font-size: 12px;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+
+  .rightInfo {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .chart {
+      width: 100%;
+      height: 70%;
+    }
+    .percent {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .period {
+        font-size: 12px;
+        color: $soft-color;
+        opacity: 0.8;
+      }
+      .number {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+}
