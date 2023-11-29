@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="logo">
         <img src="logo.svg" alt="로고이미지" />
-        <span>Plla2</span>
+        <span>Admin Dashboard</span>
       </div>
       <div className="icons">
         <img src="/search.svg" alt="검색" className="icon" />
