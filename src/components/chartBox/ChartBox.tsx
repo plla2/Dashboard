@@ -2,6 +2,16 @@ import { Link } from "react-router-dom";
 import "./chartbox.scss";
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 
+interface Props {
+  color: string;
+  icon: string;
+  title: string;
+  number: string | number;
+  dataKey: string;
+  percentage: number;
+  chartData: object[];
+}
+
 const data = [
   {
     name: "Page A",
@@ -47,7 +57,7 @@ const data = [
   },
 ];
 
-const ChartBox = () => {
+const ChartBox = (props: Props) => {
   return (
     <div className="chartBox">
       <div className="leftInfo">
