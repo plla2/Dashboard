@@ -62,20 +62,20 @@ const ChartBox = (props: Props) => {
     <div className="chartBox">
       <div className="leftInfo">
         <div className="title">
-          <img src="/user.svg" alt="" />
-          <span>Title</span>
+          <img src={props.icon} alt="" />
+          <span>{props.title}</span>
         </div>
         <div className="amount">
-          <span>11111</span>
+          <span>{props.number}</span>
         </div>
-        <Link to="/" className="viewAll">
+        <Link to="/" className="viewAll" style={{ color: props.color }}>
           View all
         </Link>
       </div>
       <div className="rightInfo">
         <div className="chart">
           <ResponsiveContainer width="99%" height="100%">
-            <LineChart data={data}>
+            <LineChart data={props.chartData}>
               <Tooltip
                 contentStyle={{ background: "transparent", border: "none" }}
                 labelStyle={{ display: "none" }}
@@ -83,8 +83,8 @@ const ChartBox = (props: Props) => {
               />
               <Line
                 type="monotone"
-                dataKey="pv"
-                stroke="#8884d8"
+                dataKey={props.dataKey}
+                stroke={props.color}
                 strokeWidth={2}
                 dot={false}
               />
@@ -92,7 +92,12 @@ const ChartBox = (props: Props) => {
           </ResponsiveContainer>
         </div>
         <div className="percent">
-          <span className="number">45%</span>
+          <span
+            className="number"
+            style={{ color: props.percentage < 0 ? "tomato" : "limegreen" }}
+          >
+            {props.percentage}%
+          </span>
           <span className="period">this month</span>
         </div>
       </div>
