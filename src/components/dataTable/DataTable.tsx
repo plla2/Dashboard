@@ -15,7 +15,7 @@ const DataTable = (props: Props) => {
     width: 200,
     renderCell: (params) => {
       return (
-        <div>
+        <div className="action">
           <Link to={`/${props.slug}/${params.row.id}`}>
             <img src="/view.svg" alt="" />
           </Link>
